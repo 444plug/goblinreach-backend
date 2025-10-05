@@ -9,8 +9,9 @@ module.exports = async (req, res) => {
         line_items: [{ price: 'price_1Rb8YUBVvxnlfHy5htu0ZP80', quantity: 1 }],
         success_url: `${req.headers.origin}/success?session_id={CHECKOUT_SESSION_ID}`,
         cancel_url: `${req.headers.origin}/cancel`,
+        metadata: { accessCode: `GOBLIN${Math.floor(Math.random() * 1000)}` }
       });
-      res.status(200).json({ sessionId: session.id });
+      res.status(200).json({ sessionId: session.id, accessCode: session.metadata.accessCode });
     } catch (err) {
       res.status(500).json({ error: err.message });
     }
