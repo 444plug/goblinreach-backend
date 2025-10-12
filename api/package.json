@@ -1,5 +1,5 @@
 {
-  "name": "goblinreach-backend",
+  "name": "goblinreach-backend-vhsf",
   "version": "1.0.0",
   "scripts": { "start": "vercel dev" },
   "dependencies": { "stripe": "^14.0.0" }
